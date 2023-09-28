@@ -1,4 +1,4 @@
-import names from "../../constants/names";
+import names from "../../../constants/names";
 import { Bars3Icon, MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 
 export default function Header() {
