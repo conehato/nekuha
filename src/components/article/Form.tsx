@@ -1,18 +1,19 @@
 "use client";
 
-import { Editor } from "@/components/Editor";
+import { Editor } from "@/components/common";
 import { Controller, useForm } from "react-hook-form";
 
-interface PostCreateFormType {
+interface ArticleFormType {
   title: string;
   contents: string;
 }
-export function PostCreateForm() {
+
+export function ArticleForm() {
   const {
     handleSubmit,
     control,
     formState: { isValid, isDirty },
-  } = useForm<PostCreateFormType>({});
+  } = useForm<ArticleFormType>({});
 
   return (
     <div>

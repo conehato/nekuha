@@ -41,10 +41,7 @@ export function Editor({ value, onChange }: EditorProps) {
       config={{
         extraPlugins: [uploadPlugin],
       }}
-      onReady={(editor: any) => {
-        console.log("editor ready", { editor });
-        editor.data.set(value || "");
-      }}
+      onReady={(editor: any) => editor.data.set(value || "")}
       onChange={(_, editor) => onChange(editor.getData())}
     />
   );
