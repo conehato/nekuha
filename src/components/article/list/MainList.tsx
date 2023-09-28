@@ -1,13 +1,20 @@
 import { ArticleViewNews } from "../view/News";
+import { ArticleListNavBar, TnavItem} from "./NavBar";
 
-export function ArticleListMainList() {
+interface IProps {
+    navItems: TnavItem
+    selectedNavItem: string
+}
+
+export function ArticleListMainList({ navItems, selectedNavItem }: IProps) {
     
     const articles = [0, 1, 2, 3, 4, 5, 6, 7]
     const renderArticles = () => articles.map((item) => <ArticleViewNews/>)
 
     return (
     <div className="w-full">
-        <ul>
+        <ArticleListNavBar items={navItems} selectedItem={selectedNavItem}/>
+        <ul className="divide-y divide-solid">
             {renderArticles()}
         </ul>
     </div>
