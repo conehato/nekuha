@@ -1,9 +1,9 @@
-import { PostCreateForm } from "@/components/post/write/PostCreateForm";
+import { ArticleForm } from "@/components/article";
 
 export default function Write() {
   return (
     <div>
-      <PostCreateForm />
+      <ArticleForm />
     </div>
   );
 }
