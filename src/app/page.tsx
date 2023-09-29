@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import { ArticleListMainList } from '@/components/article/list/MainList'
 
-export default function Home({ category }: { category: string}) {
+export default function Home({ category }: { category: string | null}) {
   const mainCategory = [{
     name: "화제",
     key: "hot"
@@ -12,7 +12,7 @@ export default function Home({ category }: { category: string}) {
 
   return (
     <div className='flex h-full bg-background-green'>
-      <ArticleListMainList navItems={mainCategory} selectedNavItem={category}/>
+      <ArticleListMainList navItems={mainCategory} selectedNavItem={category || mainCategory[0].key}/>
     </div>
   )
 }
