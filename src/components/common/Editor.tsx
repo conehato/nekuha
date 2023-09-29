@@ -1,11 +1,11 @@
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 
-interface EditorProps {
+interface IEditorProps {
   value: string;
   onChange: (value: string) => void;
 }
-export function Editor({ value, onChange }: EditorProps) {
+export function Editor({ value, onChange }: IEditorProps) {
   const uploadAdapter = (loader: any) => {
     return {
       upload() {

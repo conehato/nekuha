@@ -4,7 +4,6 @@ export type TnavItem = {
   name: string;
   key: string;
 }[];
-
 export interface IProps {
   items: TnavItem;
   selectedItem: string;

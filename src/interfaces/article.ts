@@ -1,23 +1,22 @@
-export interface ArticleList extends Omit<Article, "contents" | "comments"> {
-  summary: string;
+export interface IArticlePreview extends Omit<IArticle, "contents" | "comments"> {
   commentCount: number;
 }
 
-export interface Article {
+export interface IArticle {
   title: string;
-  author: User;
+  author: IUser;
   contents: string;
-  comments: Comment[];
+  comments: IComment[];
   createdAt: string;
 }
 
-export interface Comment {
+export interface IComment {
   contents: string;
-  author: User;
+  author: IUser;
   createdAt: string;
 }
 
-export interface User {
+export interface IUser {
   name: string;
   profileImage?: string;
 }

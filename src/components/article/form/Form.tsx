@@ -3,17 +3,16 @@
 import { Editor } from "@/components/common";
 import { Controller, useForm } from "react-hook-form";
 
-interface ArticleFormType {
+interface IArticleFormType {
   title: string;
   contents: string;
 }
-
 export function ArticleForm() {
   const {
     handleSubmit,
     control,
     formState: { isValid, isDirty },
-  } = useForm<ArticleFormType>({});
+  } = useForm<IArticleFormType>({});
 
   return (
     <div>

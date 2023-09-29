@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export function ArticleViewNews() {
+export function ArticleListItem() {
   const dummyImgInfo = {
     src: "https://i1.sndcdn.com/avatars-yHA8nds2mqg4uYtr-kyxTzw-t500x500.jpg",
     alt: "안유진",
