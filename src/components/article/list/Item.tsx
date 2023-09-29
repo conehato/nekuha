@@ -1,10 +1,12 @@
 import { IArticlePreview } from "@/interfaces";
 import Image from "next/image";
+import { formatDistanceToNow } from 'date-fns'
 
 interface IArticleListItemProps {
   article: IArticlePreview;
 }
 export function ArticleListItem({ article }: IArticleListItemProps) {
+  const timeDiff = 0
   return (
     <div className="flex flex-row w-full bg-white items-center">
       <Image
@@ -25,7 +27,7 @@ export function ArticleListItem({ article }: IArticleListItemProps) {
             {"ユーモア"}
           </p>
           <p className="text-xs line-clamp-1 text-stone-500">
-            {"イナズマイレブン | 13時間前 | コメント 3"}
+            {"イナズマイレブン | " + timeDiff + " | コメント 3"}
           </p>
         </div>
       </div>
