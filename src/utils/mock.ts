@@ -4,6 +4,7 @@ export const usersMock: IUser[] = [
   { id: 0, name: "田中太郎", profileImage: "https://example.com/profile1.jpg" },
   { id: 1, name: "鈴木一郎", profileImage: "https://example.com/profile2.jpg" },
   { id: 2, name: "佐藤次郎", profileImage: "https://example.com/profile3.jpg" },
+  { id: 3, name: "佐藤郎中", profileImage: "https://example.com/profile4.jpg" },
 ];
 
 export const articlesMock: IArticlePreview[] = [

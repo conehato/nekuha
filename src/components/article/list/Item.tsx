@@ -8,6 +8,7 @@ interface IArticleListItemProps {
 }
 export function ArticleListItem({ article }: IArticleListItemProps) {
   const timeDiff =  formatDistanceToNow(new Date(article.createdAt), {addSuffix: true, locale: ja})
+  
   return (
     <div className="flex flex-row w-full bg-white items-center">
       <Image
