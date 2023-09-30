@@ -13,6 +13,11 @@ export const articlesMock: IArticlePreview[] = [
     author: usersMock[0],
     createdAt: "2023-09-28T09:00:00Z",
     commentCount: 45,
+    previewImage: {
+      src: "https://i1.sndcdn.com/avatars-yHA8nds2mqg4uYtr-kyxTzw-t500x500.jpg",
+      alt: "Tame Impala",
+    },
+    category: "ユーモア",
   },
   {
     id: 1,
@@ -20,6 +25,11 @@ export const articlesMock: IArticlePreview[] = [
     author: usersMock[1],
     createdAt: "2023-09-27T14:00:00Z",
     commentCount: 30,
+    previewImage: {
+      src: "https://i1.sndcdn.com/avatars-yHA8nds2mqg4uYtr-kyxTzw-t500x500.jpg",
+      alt: "Tame Impala"
+    },
+    category: "ユーモア",
   },
   {
     id: 2,
@@ -27,6 +37,11 @@ export const articlesMock: IArticlePreview[] = [
     author: usersMock[2],
     createdAt: "2023-09-26T16:00:00Z",
     commentCount: 52,
+    previewImage: {
+      src: "https://i1.sndcdn.com/avatars-yHA8nds2mqg4uYtr-kyxTzw-t500x500.jpg",
+      alt: "Tame Impala"
+    },
+    category: "ユーモア",
   },
   {
     id: 3,
@@ -34,6 +49,11 @@ export const articlesMock: IArticlePreview[] = [
     author: usersMock[1],
     createdAt: "2023-09-25T10:00:00Z",
     commentCount: 29,
+    previewImage: {
+      src: "https://i1.sndcdn.com/avatars-yHA8nds2mqg4uYtr-kyxTzw-t500x500.jpg",
+      alt: "Tame Impala"
+    },
+    category: "ユーモア",
   },
   {
     id: 4,
@@ -41,6 +61,11 @@ export const articlesMock: IArticlePreview[] = [
     author: usersMock[0],
     createdAt: "2023-09-24T12:00:00Z",
     commentCount: 68,
+    previewImage: {
+      src: "https://i1.sndcdn.com/avatars-yHA8nds2mqg4uYtr-kyxTzw-t500x500.jpg",
+      alt: "Tame Impala"
+    },
+    category: "ユーモア",
   },
   {
     id: 5,
@@ -48,6 +73,11 @@ export const articlesMock: IArticlePreview[] = [
     author: usersMock[2],
     createdAt: "2023-09-23T11:00:00Z",
     commentCount: 40,
+    previewImage: {
+      src: "https://i1.sndcdn.com/avatars-yHA8nds2mqg4uYtr-kyxTzw-t500x500.jpg",
+      alt: "Tame Impala"
+    },
+    category: "ユーモア",
   },
   {
     id: 6,
@@ -55,6 +85,11 @@ export const articlesMock: IArticlePreview[] = [
     author: usersMock[0],
     createdAt: "2023-09-22T15:00:00Z",
     commentCount: 0,
+    previewImage: {
+      src: "https://i1.sndcdn.com/avatars-yHA8nds2mqg4uYtr-kyxTzw-t500x500.jpg",
+      alt: "Tame Impala"
+    },
+    category: "ユーモア",
   },
   {
     id: 7,
@@ -62,5 +97,10 @@ export const articlesMock: IArticlePreview[] = [
     author: usersMock[1],
     createdAt: "2023-09-21T09:00:00Z",
     commentCount: 44,
+    previewImage: {
+      src: "https://i1.sndcdn.com/avatars-yHA8nds2mqg4uYtr-kyxTzw-t500x500.jpg",
+      alt: "Tame Impala"
+    },
+    category: "ユーモア",
   },
 ];

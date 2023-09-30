@@ -1,6 +1,10 @@
 export interface IArticlePreview
   extends Omit<IArticle, "contents" | "comments"> {
   commentCount: number;
+  previewImage: {
+    src: string,
+    alt: string,
+  }
 }
 
 export interface IArticle {
@@ -10,6 +14,7 @@ export interface IArticle {
   contents: string;
   comments: IComment[];
   createdAt: string;
+  category: string;
 }
 
 export interface IComment {
