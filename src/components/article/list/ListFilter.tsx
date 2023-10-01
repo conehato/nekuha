@@ -2,6 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { PencilSquareIcon } from "@heroicons/react/24/solid";
 
 interface IListFilterProps {
   items: { name: string; key: string }[];
@@ -11,12 +12,13 @@ export function ListFilter({ items, selectedItem }: IListFilterProps) {
   const pathname = usePathname();
 
   const renderFilterItem = () => {
-    const getFilteredUrlWithQuery = (query: string) => (`${pathname}?filter=${query}`)
+    const getFilteredUrlWithQuery = (query: string) =>
+      `${pathname}?filter=${query}`;
     // Each item navigates to (current url + query named 'filter')
     // ex) /game?filter=hot
     // Every page.tsx which has ListFilter component as children can get 'filter' from prop named 'searchParams'
     // and must pass the 'filter' to 'selectedItem' to be in sync
-    
+
     return items.map((item) => (
       <Link
         key={item.key}
@@ -36,10 +38,13 @@ export function ListFilter({ items, selectedItem }: IListFilterProps) {
       </Link>
     ));
   };
-  
+
   return (
-    <div className="w-fill flex flex-row bg-main-blue/30 px-2 py-1">
-      {renderFilterItem()}
+    <div className="w-fill flex flex-row justify-between bg-main-blue/30 px-2 py-1">
+      <div className="flex flex-row">{renderFilterItem()}</div>
+      <Link href={"/write"} className="p-1">
+        <PencilSquareIcon className="w-8 h-8" />
+      </Link>
     </div>
   );
 }
