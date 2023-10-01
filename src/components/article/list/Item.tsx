@@ -17,6 +17,8 @@ export function ArticleListItem({ article }: IArticleListItemProps) {
         alt={article.previewImage.alt}
         width={80}
         height={80}
+        placeholder="blur"
+        blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=="
       />
       <div className="flex flex-col px-2 py-1 h-20 justify-between">
         <p className="text-base/[1.25rem] line-clamp-2 text-sky-600">

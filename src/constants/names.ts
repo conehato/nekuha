@@ -1,3 +1,3 @@
 export const names = {
-  serviceName: "ネクハ"
+  serviceName: "コネハト"
 } as const;

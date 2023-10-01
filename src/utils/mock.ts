@@ -1,4 +1,4 @@
-import { IArticlePreview, IUser } from "@/interfaces";
+import { IArticlePreview, IUser, ICategory } from "@/interfaces";
 
 export const usersMock: IUser[] = [
   { id: 0, name: "田中太郎", profileImage: "https://example.com/profile1.jpg" },
@@ -105,3 +105,70 @@ export const articlesMock: IArticlePreview[] = [
     category: "ユーモア",
   },
 ];
+
+export const mainCategory: ICategory[] = [
+  {
+    name: "유머",
+    key: "humor"
+  },
+  {
+    name: "뉴스",
+    key: "news"
+  },
+  {
+    name: "아이돌",
+    key: "idol"
+  },
+  {
+    name: "버튜버",
+    key: "vtuber"
+  },
+  {
+    name: "주식",
+    key: "stock"
+  },
+  {
+    name: "만화",
+    key: "manga"
+  },
+  {
+    name: "국내야구",
+    key: "baseball_d"
+  },
+  {
+    name: "국내축구",
+    key: "football_d"
+  },
+  {
+    name: "해외야구",
+    key: "baseball_o"
+  },
+  {
+    name: "해외축구",
+    key: "football_o"
+  },
+  {
+    name: "포켓몬",
+    key: "pokemon"
+  },
+  {
+    name: "게임",
+    key: "game"
+  },
+  {
+    name: "취직&전직",
+    key: "jobs"
+  },
+  {
+    name: "핫딜",
+    key: "hotdeal"
+  },
+  {
+    name: "입시&대학",
+    key: "academic"
+  },
+  {
+    name: "K-POP",
+    key: "kpop"
+  },
+]
