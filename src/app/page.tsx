@@ -1,9 +1,17 @@
 import { ArticleList } from "@/components/article";
-import { ListFilter } from "@/components/category";
-import { articlesMock } from "@/utils";
+import { ListFilter } from "@/components/article";
+import { CategoryNavBar } from "@/components/category";
+import { articlesMock, mainCategory } from "@/utils";
 
-export default function Home({ category }: { category: string | null }) {
-  const mainCategory = [
+interface ICategoryProps {
+  searchParams: {
+    filter: string;
+    [key: string]: string | string[] | undefined;
+  };
+}
+
+export default function Home({ searchParams }: ICategoryProps) {
+  const filters = [
     {
       name: "화제",
       key: "hot",
@@ -16,9 +24,10 @@ export default function Home({ category }: { category: string | null }) {
 
   return (
     <div className="flex flex-col first-letter:h-full bg-background-green">
+      <CategoryNavBar items={mainCategory} />
       <ListFilter
-        items={mainCategory}
-        selectedItem={category || mainCategory[0].key}
+        items={filters}
+        selectedItem={searchParams.filter || filters[0].key}
       />
       <ArticleList articles={articlesMock} />
     </div>
