@@ -1,44 +1,24 @@
 import { articlesMock } from "@/utils";
 import { ListFilter } from "@/components/article";
 import { ArticleList } from "@/components/article";
-import { getCategoryDetail } from "@/utils/apiMock";
-import type { InferGetStaticPropsType, GetStaticProps, GetStaticPropsContext } from 'next'
+import { getCategoryDetailOf } from "@/app/api/category/[id]/getCategoryDetailOf";
 
 interface ICategoryParamsProps {
-   category: string;
-   detail: {
-    name: string
-    key: string
-  } 
+  category: string;
 }
 
 interface ICategoryProps {
-    params: ICategoryParamsProps
-    searchParams: {
+  params: ICategoryParamsProps;
+  searchParams: {
     filter: string;
     [key: string]: string | string[] | undefined;
   };
 }
-// export async function getStaticProps(context: GetStaticPropsContext<{ category: string }>) {
-//   if (context.params?.category) {
-//     const detail = getCategoryDetail(context.params?.category)
-//     return {
-//       props: { detail }
-//     }
-//   }
-// }
-// export const getStaticProps = (async (context: GetStaticPropsContext<{category: string}>) => {
-//   if (context.params?.category) {
-//         const detail = getCategoryDetail(context.params?.category as string)
-//         return {
-//           props: { detail }
-//         }
-//       }
-// })
 
 
-export default function Category({ params, searchParams }: ICategoryProps) {
-  
+export default async function Category({ params, searchParams }: ICategoryProps) {
+  const detail = await getCategoryDetailOf(params.category)
+  console.log(detail)
   const filter = [
     {
       name: "화제",
@@ -52,10 +32,10 @@ export default function Category({ params, searchParams }: ICategoryProps) {
 
   return (
     <div className="flex flex-col first-letter:h-full bg-background-green">
-      <div className="text-7xl">{params.detail.name}</div>
+      <div className="text-7xl">{detail.name}</div>
       <ListFilter
         items={filter}
-        selectedItem={(searchParams.filter) || filter[0].key}
+        selectedItem={searchParams.filter || filter[0].key}
       />
       <ArticleList articles={articlesMock} />
     </div>
