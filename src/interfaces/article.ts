@@ -15,6 +15,7 @@ export interface IArticle {
   comments: IComment[];
   createdAt: string;
   category: string;
+  likeCount: number;
 }
 
 export interface IComment {
