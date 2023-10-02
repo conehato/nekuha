@@ -1,10 +1,10 @@
 import Link from "next/link";
 
-interface ICategoryNavBarProps {
+interface ITextBlockNavBarProps {
   items: { name: string; key: string }[];
 }
 
-export function CategoryNavBar({ items }: ICategoryNavBarProps) {
+export function TextBlockNavBar({ items }: ITextBlockNavBarProps) {
 
   return (
     <div className="flex flex-row w-full flex-wrap bg-main-blue/50 p-2">
