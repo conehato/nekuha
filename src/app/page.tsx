@@ -1,7 +1,7 @@
 import { List } from "@/components/common/List";
 import { ListFilter } from "@/components/article";
 import { ArticleViewPreview } from "@/components/article/view/Preview";
-import { TextBlockNavBar } from "@/components/common/TextBlockNavBar";
+import { TextBlockNavBar } from "@/components/common";
 import { articlesMock, mainCategory } from "@/utils";
 
 interface ICategoryProps {
