@@ -6,6 +6,7 @@ import {ja} from "date-fns/locale"
 interface IArticleListItemProps {
   article: IArticlePreview;
 }
+
 export function ArticleListItem({ article }: IArticleListItemProps) {
   const timeDiff =  formatDistanceToNow(new Date(article.createdAt), {addSuffix: true, locale: ja})
   

@@ -4,6 +4,7 @@ import { ArticleListItem } from "./Item";
 interface IArticleListProps {
   articles: IArticlePreview[];
 }
+
 export function ArticleList({ articles }: IArticleListProps) {
   return (
     <div className="w-full">
