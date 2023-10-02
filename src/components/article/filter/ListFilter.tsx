@@ -7,6 +7,7 @@ interface IListFilterProps {
   items: { name: string; key: string }[];
   selectedItem: string;
 }
+
 export function ListFilter({ items, selectedItem }: IListFilterProps) {
   const pathname = usePathname();
 

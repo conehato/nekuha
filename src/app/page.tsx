@@ -1,6 +1,7 @@
-import { ArticleList } from "@/components/article";
+import { List } from "@/components/common/List";
 import { ListFilter } from "@/components/article";
-import { CategoryNavBar } from "@/components/category";
+import { ArticleViewPreview } from "@/components/article/view/Preview";
+import { TextBlockNavBar } from "@/components/common/TextBlockNavBar";
 import { articlesMock, mainCategory } from "@/utils";
 
 interface ICategoryProps {
@@ -24,12 +25,14 @@ export default function Home({ searchParams }: ICategoryProps) {
 
   return (
     <div className="flex flex-col first-letter:h-full bg-background-green">
-      <CategoryNavBar items={mainCategory} />
+      <TextBlockNavBar items={mainCategory} />
       <ListFilter
         items={filters}
         selectedItem={searchParams.filter || filters[0].key}
       />
-      <ArticleList articles={articlesMock} />
+      <List data={articlesMock}>
+        {({item}) => <ArticleViewPreview article={item}/>}
+      </List>
     </div>
   );
 }

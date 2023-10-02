@@ -1,13 +1,14 @@
 import { IArticlePreview } from "@/interfaces";
+
 import Image from "next/image";
 import { formatDistanceToNow } from 'date-fns'
 import {ja} from "date-fns/locale"
 
-interface IArticleListItemProps {
+interface IArticleViewPreviewProps {
   article: IArticlePreview;
 }
 
-export function ArticleListItem({ article }: IArticleListItemProps) {
+export function ArticleViewPreview({ article }: IArticleViewPreviewProps) {
   const timeDiff =  formatDistanceToNow(new Date(article.createdAt), {addSuffix: true, locale: ja})
   
   return (
