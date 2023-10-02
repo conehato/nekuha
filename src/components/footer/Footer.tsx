@@ -11,6 +11,7 @@ export function Footer() {
       );
     }
   };
+  
   return (
     <div className="flex flex-col w-screen p-2 justify-center items-center bg-white">
       {<div className="text-xs">{renderFormattedEmailUrl(contacts.email)}</div>}

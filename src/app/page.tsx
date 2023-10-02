@@ -3,15 +3,17 @@ import { ListFilter } from "@/components/article";
 import { ArticleViewPreview } from "@/components/article/view/Preview";
 import { TextBlockNavBar } from "@/components/common";
 import { articlesMock, mainCategory } from "@/utils";
+import { getArticlesInfoOf } from "./api/article/getArticlesInfoOf";
 
 interface ICategoryProps {
   searchParams: {
-    filter: string;
+    filter: string | undefined;
+    page: string | undefined;
     [key: string]: string | string[] | undefined;
   };
 }
 
-export default function Home({ searchParams }: ICategoryProps) {
+export default async function Home({ searchParams }: ICategoryProps) {
   const filters = [
     {
       name: "화제",
@@ -22,6 +24,8 @@ export default function Home({ searchParams }: ICategoryProps) {
       key: "new",
     },
   ];
+  const articlesInfo = await getArticlesInfoOf(searchParams.page);
+  console.log('aInfo', articlesInfo)
 
   return (
     <div className="flex flex-col first-letter:h-full bg-background-green">
@@ -30,7 +34,7 @@ export default function Home({ searchParams }: ICategoryProps) {
         items={filters}
         selectedItem={searchParams.filter || filters[0].key}
       />
-      <List data={articlesMock}>
+      <List data={articlesInfo.articlePreviews}>
         {({item}) => <ArticleViewPreview article={item}/>}
       </List>
     </div>

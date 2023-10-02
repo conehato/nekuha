@@ -8,7 +8,6 @@ export async function GET(
 ) {
   // fetch mongo db
   return new Promise((resolve) => {
-    setTimeout(() => {
       const detail = Mock.mainCategory.find((item) => item.key === params.id);
       if (detail) {
         
@@ -16,6 +15,5 @@ export async function GET(
       } else {
         resolve(Response.json(null, { status: 204 }));
       }
-    }, 500);
   });
 }
