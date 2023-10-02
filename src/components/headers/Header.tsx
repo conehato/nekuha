@@ -7,7 +7,7 @@ export function Header() {
     <div className="flex flex-row w-screen px-4 py-1.5 justify-between items-center border-b-2 border-main-blue-dark">
       <Bars3Icon className="w-8 h-8" />
       <Link href="/">
-        <div className="text-4xl font-bold my-auto pb-1 justify-center">
+        <div className="text-2xl font-bold my-auto pb-1 justify-center">
           {names.serviceName}
         </div>
       </Link>

@@ -22,7 +22,7 @@ export const articlesMock: IArticlePreview[] = [
   },
   {
     id: 1,
-    title: "超リアル！街中で見かけた面白いコスプレ",
+    title: "超リアル！街中で見かけた面白いコスプレ超リアル！街中でスプレ",
     author: usersMock[1],
     createdAt: "2023-09-27T14:00:00Z",
     commentCount: 30,
