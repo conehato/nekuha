@@ -5,7 +5,7 @@ const nextConfig = {
             protocol: 'https',
             hostname: 'i1.sndcdn.com',
         }]
-    }
+    },
 }
 
 module.exports = nextConfig
