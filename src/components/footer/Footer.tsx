@@ -1,4 +1,6 @@
 import { contacts } from "@/constants/contacts";
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
+import Link from "next/link";
 
 export function Footer() {
   const user = 1;
@@ -14,7 +16,18 @@ export function Footer() {
   
   return (
     <div className="flex flex-col w-screen p-2 justify-center items-center bg-white">
-      {<div className="text-xs">{renderFormattedEmailUrl(contacts.email)}</div>}
+      <div className="flex flex-row">
+        <Link href="">
+          <ChevronLeftIcon className="w-7 h-7"/>
+        </Link>
+        <p>
+          {"1"}
+        </p>
+        <Link href="">
+          <ChevronRightIcon className="w-7 h-7"/>
+        </Link>
+      </div>
+      <div className="text-xs">{renderFormattedEmailUrl(contacts.email)}</div>
     </div>
   );
 }
