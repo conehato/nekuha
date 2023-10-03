@@ -6,7 +6,7 @@ interface IListProps<T> {
 export function List<T>({ data, children }: IListProps<T>) {
   return (
     <div className="w-full">
-      <ul className="divide-y divide-solid divide-main-blue">
+      <ul className="">
         {data.map(i => children({item: i}))}
       </ul>
     </div>

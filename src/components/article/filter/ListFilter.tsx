@@ -28,7 +28,7 @@ export function ListFilter({ items, selectedItem }: IListFilterProps) {
         replace
       >
         <div
-          className={`flex px-2 py-1 rounded-md ${
+          className={`flex px-2 py-1 rounded-md text-sm ${
             selectedItem == item.key
               ? "bg-white text-black shadow-md"
               : "text-black/50"
@@ -41,7 +41,7 @@ export function ListFilter({ items, selectedItem }: IListFilterProps) {
   };
 
   return (
-    <div className="w-fill flex flex-row justify-between bg-main-blue/30 px-2 py-1">
+    <div className="w-fill flex flex-row justify-between items-center bg-main-blue/30 px-2 py-1">
       <div className="flex flex-row">{renderFilterItem()}</div>
       <Link href={"/write"} className="p-1">
         <PencilSquareIcon className="w-8 h-8" />

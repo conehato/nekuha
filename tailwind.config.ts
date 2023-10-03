@@ -19,8 +19,7 @@ const config: Config = {
         "main-blue-dark": "#435E75",
       },
       fontSize: {
-        "xs": ["0.5rem", "1rem"],
-        "sm": ["0.75rem", "1rem"]
+        "xs": ["0.65rem", "0.7rem"],
       },
     },
   },
