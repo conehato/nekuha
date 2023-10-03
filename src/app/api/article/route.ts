@@ -10,10 +10,12 @@ export interface IArticleRes {
 export async function GET(request: NextRequest) {
   const searchParams = request.nextUrl.searchParams;
   const page = searchParams.get("p");
-  const mockData = {
+  const mockData: IArticleRes = {
     totalArticleCount: Mock.articlesMock.length,
     articlePreviews: Mock.articlesMock,
   };
+
+  
   return new Promise((resolve) => {
     if (page) {
       // request pagenation to server

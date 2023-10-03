@@ -3,7 +3,7 @@ import { ListFilter } from "@/components/article";
 import { ArticleViewPreview } from "@/components/article/view/Preview";
 import { TextBlockNavBar } from "@/components/common";
 import { articlesMock, mainCategory } from "@/utils";
-import { getArticlesInfoOf } from "./api/article/getArticlesInfoOf";
+import { useAPIArticle } from "./api/article";
 
 interface ICategoryProps {
   searchParams: {
@@ -24,8 +24,8 @@ export default async function Home({ searchParams }: ICategoryProps) {
       key: "new",
     },
   ];
-  const articlesInfo = await getArticlesInfoOf(searchParams.page);
-  console.log('aInfo', articlesInfo)
+  
+  const articlesInfo = await useAPIArticle().get("http://localhost:3000/api/article")
 
   return (
     <div className="flex flex-col first-letter:h-full bg-background-green">
