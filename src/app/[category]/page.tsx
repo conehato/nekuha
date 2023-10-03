@@ -1,8 +1,8 @@
-import { articlesMock } from "@/utils";
 import { ListFilter } from "@/components/article";
-import { List } from "@/components/common";
+import { List, TextBlockNavBar } from "@/components/common";
+import { APICategoryById } from "../api/category/[id]";
 import { ArticleViewPreview } from "@/components/article/view/Preview";
-import { getCategoryDetailOf } from "@/app/api/category/[key]/getCategoryDetailOf";
+import { APIArticle } from "../api/article";
 
 interface ICategoryParamsProps {
   category: string;
@@ -16,10 +16,19 @@ interface ICategoryProps {
   };
 }
 
+export default async function Category({
+  params,
+  searchParams,
+}: ICategoryProps) {
+  const {
+    data: { name, subCategories },
+  } = await APICategoryById().get(
+    `http://localhost:3000/api/category/${params.category}`
+  );
+  const { data: articlesInfo } = await APIArticle().get(
+    "http://localhost:3000/api/article"
+  );
 
-export default async function Category({ params, searchParams }: ICategoryProps) {
-  const detail = await getCategoryDetailOf(params.category)
-  console.log(detail)
   const filter = [
     {
       name: "화제",
@@ -33,13 +42,14 @@ export default async function Category({ params, searchParams }: ICategoryProps)
 
   return (
     <div className="flex flex-col first-letter:h-full bg-background-green">
-      <div className="text-7xl">{detail.name}</div>
+      <div className="text-7xl">{name}</div>
+      {!!subCategories?.length && <TextBlockNavBar items={subCategories} />}
       <ListFilter
         items={filter}
         selectedItem={searchParams.filter || filter[0].key}
       />
-      <List data={articlesMock}>
-        {({item}) => <ArticleViewPreview article={item}/>}
+      <List data={articlesInfo.rows}>
+        {({ item }) => <ArticleViewPreview article={item} />}
       </List>
     </div>
   );

@@ -1,10 +1,12 @@
 import mongoose from "mongoose";
 import { IComments } from "./Comments";
+import { ICategories } from "./Categories";
 
 export interface IArticles extends mongoose.Document {
   title: string;
   contents: string;
   comments: IComments[];
+  category: ICategories;
 }
 
 /* ArticleSchema will correspond to a collection in your MongoDB database. */
@@ -23,6 +25,7 @@ const ArticleSchema = new mongoose.Schema<IArticles>(
       required: [true, "글 내용 제공되지 않았습니다."],
     },
     comments: [{ type: mongoose.Schema.Types.ObjectId, ref: "Comment" }],
+    category: { type: String, ref: "Category" },
   },
   { timestamps: true }
 );

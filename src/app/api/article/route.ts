@@ -1,4 +1,4 @@
-import { Article } from "@/models";
+import { Article, IArticles } from "@/models";
 
 import dbConnect from "../dbConnect";
 import { IArticlePreview } from "@/interfaces";
@@ -32,11 +32,9 @@ export async function GET(req: Request) {
 export interface IPostArticlesReq {
   title: string;
   contents: string;
+  category: string;
 }
-export interface IPostArticlesRes {
-  count: number;
-  rows: IArticlePreview[];
-}
+export interface IPostArticlesRes extends IArticles {}
 export async function POST(req: Request) {
   await dbConnect();
 

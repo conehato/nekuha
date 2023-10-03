@@ -1,9 +1,8 @@
-import { List } from "@/components/common/List";
 import { ListFilter } from "@/components/article";
+import { List, TextBlockNavBar } from "@/components/common";
+import { APICategory } from "./api/category";
+import { APIArticle } from "./api/article";
 import { ArticleViewPreview } from "@/components/article/view/Preview";
-import { TextBlockNavBar } from "@/components/common";
-import { articlesMock, mainCategory } from "@/utils";
-import { useAPIArticle } from "./api/article";
 
 interface ICategoryProps {
   searchParams: {
@@ -14,6 +13,14 @@ interface ICategoryProps {
 }
 
 export default async function Home({ searchParams }: ICategoryProps) {
+  const { data } = await APICategory().get(
+    `http://localhost:3000/api/category`
+  );
+
+  const { data: articlesInfo } = await APIArticle().get(
+    "http://localhost:3000/api/article"
+  );
+
   const filters = [
     {
       name: "화제",
@@ -24,18 +31,16 @@ export default async function Home({ searchParams }: ICategoryProps) {
       key: "new",
     },
   ];
-  
-  const articlesInfo = await useAPIArticle().get("http://localhost:3000/api/article")
 
   return (
     <div className="flex flex-col first-letter:h-full bg-background-green">
-      <TextBlockNavBar items={mainCategory} />
+      <TextBlockNavBar items={data.rows} />
       <ListFilter
         items={filters}
         selectedItem={searchParams.filter || filters[0].key}
       />
-      <List data={articlesInfo.data.articlePreviews}>
-        {({item}) => <ArticleViewPreview article={item}/>}
+      <List data={articlesInfo.rows}>
+        {({ item }) => <ArticleViewPreview article={item} />}
       </List>
     </div>
   );

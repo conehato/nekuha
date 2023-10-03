@@ -1,9 +1,9 @@
 import { apiHandler } from "@/app/_helpers/server/apiHandler";
-import { IGetArticlesRes } from "./route";
+import { IGetArticlesRes, IPostArticlesRes, IPostArticlesReq } from "./route";
 
-export function useAPIArticle() {
+export function APIArticle() {
   return {
     get: apiHandler<IGetArticlesRes>("GET"),
-    get: apiHandler<IArticleRes>("GET"),
+    post: apiHandler<IPostArticlesRes, IPostArticlesReq>("GET"),
   };
 }
