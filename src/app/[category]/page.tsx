@@ -2,7 +2,6 @@ import { articlesMock } from "@/utils";
 import { ListFilter } from "@/components/article";
 import { List } from "@/components/common";
 import { ArticleViewPreview } from "@/components/article/view/Preview";
-import { getCategoryDetailOf } from "@/app/api/category/[key]/getCategoryDetailOf";
 
 interface ICategoryParamsProps {
   category: string;

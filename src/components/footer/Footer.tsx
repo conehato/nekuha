@@ -16,18 +16,22 @@ export function Footer() {
   
   return (
     <div className="flex flex-col w-screen p-2 justify-center items-center bg-white">
-      <div className="flex flex-row">
+      <div className="flex flex-row py-1">
         <Link href="">
-          <ChevronLeftIcon className="w-7 h-7"/>
+          <div className="flex flex-row justify-center">
+            <div>{"이전 페이지"}</div>
+            <ChevronLeftIcon className="w-6 h-6"/>
+          </div>
+          
         </Link>
-        <p>
-          {"1"}
+        <p className="text-lg mx-4">
+          {"1 / 60"}
         </p>
         <Link href="">
-          <ChevronRightIcon className="w-7 h-7"/>
+          <ChevronRightIcon className="w-6 h-6"/>
         </Link>
       </div>
-      <div className="text-xs">{renderFormattedEmailUrl(contacts.email)}</div>
+      <div className="text-xs py-2">{renderFormattedEmailUrl(contacts.email)}</div>
     </div>
   );
 }
