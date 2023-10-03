@@ -20,13 +20,9 @@ const CategorySchema = new mongoose.Schema<Categories>({
     type: String,
     required: [true, "카테고리의 키가 제공되지 않았습니다."],
   },
-  parent_key: {
-    /* List of dietary needs, if applicable */
-
-    type: [String],
-  },
+  parent_key: [{ type: mongoose.Schema.Types.ObjectId, ref: "Category" }],
 });
 
 export const Category =
-  mongoose.models.Category ||
+  (mongoose.models.Category as any as false) ||
   mongoose.model<Categories>("Category", CategorySchema);

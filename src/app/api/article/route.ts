@@ -1,31 +1,51 @@
-import { NextRequest } from "next/server";
-import * as Mock from "@/utils/mock";
+import { Article } from "@/models";
+
+import dbConnect from "../dbConnect";
 import { IArticlePreview } from "@/interfaces";
 
-export interface IArticleRes {
-  totalArticleCount: number;
-  articlePreviews: IArticlePreview[];
+export interface IGetArticlesRes {
+  count: number;
+  rows: IArticlePreview[];
+}
+export async function GET(req: Request) {
+  await dbConnect();
+
+  try {
+    const count = await Article.countDocuments();
+
+    const url = new URL(req.url);
+    const page = Number(url.searchParams.get("page") || "1") - 1;
+    const limit = Number(url.searchParams.get("limit") || "10");
+    const skip = page * limit;
+
+    const articles = await Article.find()
+      .sort({ createAt: -1 })
+      .skip(skip)
+      .limit(limit);
+
+    return Response.json({ count, rows: articles }, { status: 200 });
+  } catch (e) {
+    return Response.json(e, { status: 401 });
+  }
 }
 
-export async function GET(request: NextRequest): Promise<Response> {
-  const searchParams = request.nextUrl.searchParams;
-  const page = searchParams.get("p");
-  const mockData: IArticleRes = {
-    totalArticleCount: Mock.articlesMock.length,
-    articlePreviews: Mock.articlesMock,
-  };
+export interface IPostArticlesReq {
+  title: string;
+  contents: string;
+}
+export interface IPostArticlesRes {
+  count: number;
+  rows: IArticlePreview[];
+}
+export async function POST(req: Request) {
+  await dbConnect();
 
-  
-  return new Promise((resolve) => {
-    if (page) {
-      // request pagenation to server
-      // return data
-      resolve(Response.json({ ...mockData }, { status: 200 }));
-    } else {
-      // if not page, it is a main screen
-      // request number of all articles in db and pass it to pagnation component in footer in order to calculate
+  try {
+    const data = await req.json();
+    const article = await Article.create(data);
 
-      resolve(Response.json({ ...mockData }, { status: 200 }));
-    }
-  });
+    return Response.json(article, { status: 200 });
+  } catch (e) {
+    return Response.json(e, { status: 401 });
+  }
 }

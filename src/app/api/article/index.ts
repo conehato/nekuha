@@ -1,13 +1,9 @@
 import { apiHandler } from "@/app/_helpers/server/apiHandler";
-import { IArticlePreview } from "@/interfaces";
-
-export interface IArticleRes {
-    totalArticleCount: number;
-    articlePreviews: IArticlePreview[];
-}
+import { IGetArticlesRes } from "./route";
 
 export function useAPIArticle() {
-    return {
-        get: apiHandler<IArticleRes>('GET')
-    }
+  return {
+    get: apiHandler<IGetArticlesRes>("GET"),
+    get: apiHandler<IArticleRes>("GET"),
+  };
 }
