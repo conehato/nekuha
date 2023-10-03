@@ -7,7 +7,7 @@ export interface IArticleRes {
   articlePreviews: IArticlePreview[];
 }
 
-export async function GET(request: NextRequest) {
+export async function GET(request: NextRequest): Promise<Response> {
   const searchParams = request.nextUrl.searchParams;
   const page = searchParams.get("p");
   const mockData: IArticleRes = {

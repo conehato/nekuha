@@ -34,7 +34,7 @@ export default async function Home({ searchParams }: ICategoryProps) {
         items={filters}
         selectedItem={searchParams.filter || filters[0].key}
       />
-      <List data={articlesInfo.articlePreviews}>
+      <List data={articlesInfo.data.articlePreviews}>
         {({item}) => <ArticleViewPreview article={item}/>}
       </List>
     </div>
