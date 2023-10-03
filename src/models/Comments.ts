@@ -10,7 +10,7 @@ export interface IComments extends mongoose.Document {
 const CommentSchema = new mongoose.Schema<IComments>(
   {
     contents: {
-      /* The contents of this Article */
+      /* The contents of this Comment */
 
       type: String,
       required: [true, "댓글 내용이 제공되지 없습니다."],

@@ -17,16 +17,14 @@ const ArticleSchema = new mongoose.Schema<IArticles>(
       required: [true, "글 제목이 제공되지 없습니다."],
     },
     contents: {
-      /* The key of this Article */
+      /* The contents of this Article */
 
       type: String,
-      required: [true, "글 내용 제공되지 않았습니다."],
+      required: [true, "글 내용이 제공되지 않았습니다."],
     },
     comments: [{ type: mongoose.Schema.Types.ObjectId, ref: "Comment" }],
   },
   { timestamps: true }
 );
 
-export const Article =
-  (mongoose.models.Article as any as false) ||
-  mongoose.model<IArticles>("Article", ArticleSchema);
+export const Article = (mongoose.models.Article as any as false) || mongoose.model<IArticles>("Article", ArticleSchema);
