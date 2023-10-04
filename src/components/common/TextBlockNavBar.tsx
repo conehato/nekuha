@@ -5,7 +5,6 @@ interface ITextBlockNavBarProps {
 }
 
 export function TextBlockNavBar({ items }: ITextBlockNavBarProps) {
-
   return (
     <div className="flex flex-row w-full flex-wrap bg-main-blue/50 p-2">
       {items.map((item) => (

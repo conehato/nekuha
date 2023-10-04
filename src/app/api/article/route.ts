@@ -7,6 +7,7 @@ export interface IGetArticlesRes {
   count: number;
   rows: IArticlePreview[];
 }
+
 export async function GET(req: Request) {
   await dbConnect();
 
@@ -15,7 +16,7 @@ export async function GET(req: Request) {
 
     const url = new URL(req.url);
     const page = Number(url.searchParams.get("page") || "1") - 1;
-    const limit = Number(url.searchParams.get("limit") || "10");
+    const limit = Number(url.searchParams.get("limit") || "25");
     const skip = page * limit;
 
     const articles = await Article.find()

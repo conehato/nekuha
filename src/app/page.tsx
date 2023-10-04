@@ -13,6 +13,11 @@ interface ICategoryProps {
   };
 }
 
+const getArticles = async (page?: string) => {
+  const articlesInfo = await useAPIArticle().get("http://localhost:3000/api/article")
+  return articlesInfo.data
+}
+
 export default async function Home({ searchParams }: ICategoryProps) {
   const filters = [
     {
@@ -24,8 +29,8 @@ export default async function Home({ searchParams }: ICategoryProps) {
       key: "new",
     },
   ];
-  
-  const articlesInfo = await useAPIArticle().get("http://localhost:3000/api/article")
+
+  const articles = await getArticles(searchParams.page)
 
   return (
     <div className="flex flex-col first-letter:h-full bg-background-green">
@@ -34,7 +39,7 @@ export default async function Home({ searchParams }: ICategoryProps) {
         items={filters}
         selectedItem={searchParams.filter || filters[0].key}
       />
-      <List data={articlesInfo.data.articlePreviews}>
+      <List data={articles.rows}>
         {({item}) => <ArticleViewPreview article={item}/>}
       </List>
     </div>
