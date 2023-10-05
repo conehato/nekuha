@@ -1,4 +1,4 @@
-import { Article, IArticles } from "@/models";
+import { Article, IArticles, Comment } from "@/models";
 
 import dbConnect from "../dbConnect";
 import { IArticlePreview } from "@/interfaces";
@@ -18,8 +18,19 @@ export async function GET(req: Request) {
     const limit = Number(url.searchParams.get("limit") || "10");
     const skip = page * limit;
 
-    const articles = await Article.find()
-      .sort({ createAt: -1 })
+    const articles = await Article.aggregate([
+      { $addFields: { articleId: { $toString: "$_id" } } },
+      {
+        $lookup: {
+          from: Comment.collection.name,
+          localField: "articleId",
+          foreignField: "article_id",
+          as: "_comments",
+        },
+      },
+      { $addFields: { commentCount: { $size: "$_comments" } } },
+    ])
+      .sort({ createdAt: -1 })
       .skip(skip)
       .limit(limit);
 
@@ -29,12 +40,12 @@ export async function GET(req: Request) {
   }
 }
 
-export interface IPostArticlesReq {
+export interface IPostArticleReq {
   title: string;
   contents: string;
   category: string;
 }
-export interface IPostArticlesRes extends IArticles {}
+export interface IPostArticleRes extends IArticles {}
 export async function POST(req: Request) {
   await dbConnect();
 
