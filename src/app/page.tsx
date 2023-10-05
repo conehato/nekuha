@@ -14,17 +14,14 @@ interface ICategoryProps {
 }
 
 const getArticles = async (page?: string) => {
-  const articlesInfo = await APIArticle().get("http://localhost:3000/api/article")
+  const articlesInfo = await APIArticle().get(`http://localhost:3000/api/article?page=${page}&limit=${25}`)
+  // console.log('article data:', articlesInfo.data)
   return articlesInfo.data
 }
 
 export default async function Home({ searchParams }: ICategoryProps) {
   const { data } = await APICategory().get(
     `http://localhost:3000/api/category`
-  );
-
-  const { data: articlesInfo } = await APIArticle().get(
-    "http://localhost:3000/api/article"
   );
 
   const filters = [
@@ -50,7 +47,7 @@ export default async function Home({ searchParams }: ICategoryProps) {
       <List data={articles.rows}>
         {({item}) => <ArticleViewPreview article={item}/>}
       </List>
-      <Pagination currentPage={Number(searchParams.page)} count={articles.count} limit={25} baseUrl="/"/>
+      <Pagination currentPage={Number(searchParams.page) || 1} count={articles.count} limit={25} baseUrl="/"/>
     </div>
   );
 }
