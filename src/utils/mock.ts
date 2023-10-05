@@ -19,7 +19,7 @@ export const articlesMock: IArticlePreview[] = [
       alt: "Tame Impala",
     },
     category: "ユーモア",
-    likeCount: 7
+    likeCount: 7,
   },
   {
     id: 1,
@@ -29,10 +29,10 @@ export const articlesMock: IArticlePreview[] = [
     commentCount: 30,
     previewImage: {
       src: "https://i1.sndcdn.com/avatars-yHA8nds2mqg4uYtr-kyxTzw-t500x500.jpg",
-      alt: "Tame Impala"
+      alt: "Tame Impala",
     },
     category: "ユーモア",
-    likeCount: 1
+    likeCount: 1,
   },
   {
     id: 2,
@@ -42,10 +42,10 @@ export const articlesMock: IArticlePreview[] = [
     commentCount: 52,
     previewImage: {
       src: "https://i1.sndcdn.com/avatars-yHA8nds2mqg4uYtr-kyxTzw-t500x500.jpg",
-      alt: "Tame Impala"
+      alt: "Tame Impala",
     },
     category: "ユーモア",
-    likeCount: 23
+    likeCount: 23,
   },
   {
     id: 3,
@@ -55,10 +55,10 @@ export const articlesMock: IArticlePreview[] = [
     commentCount: 29,
     previewImage: {
       src: "https://i1.sndcdn.com/avatars-yHA8nds2mqg4uYtr-kyxTzw-t500x500.jpg",
-      alt: "Tame Impala"
+      alt: "Tame Impala",
     },
     category: "ユーモア",
-    likeCount: 4
+    likeCount: 4,
   },
   {
     id: 4,
@@ -68,10 +68,10 @@ export const articlesMock: IArticlePreview[] = [
     commentCount: 68,
     previewImage: {
       src: "https://i1.sndcdn.com/avatars-yHA8nds2mqg4uYtr-kyxTzw-t500x500.jpg",
-      alt: "Tame Impala"
+      alt: "Tame Impala",
     },
     category: "ユーモア",
-    likeCount: 12
+    likeCount: 12,
   },
   {
     id: 5,
@@ -81,10 +81,10 @@ export const articlesMock: IArticlePreview[] = [
     commentCount: 40,
     previewImage: {
       src: "https://i1.sndcdn.com/avatars-yHA8nds2mqg4uYtr-kyxTzw-t500x500.jpg",
-      alt: "Tame Impala"
+      alt: "Tame Impala",
     },
     category: "ユーモア",
-    likeCount: 10
+    likeCount: 10,
   },
   {
     id: 6,
@@ -94,10 +94,10 @@ export const articlesMock: IArticlePreview[] = [
     commentCount: 0,
     previewImage: {
       src: "https://i1.sndcdn.com/avatars-yHA8nds2mqg4uYtr-kyxTzw-t500x500.jpg",
-      alt: "Tame Impala"
+      alt: "Tame Impala",
     },
     category: "ユーモア",
-    likeCount: 23
+    likeCount: 23,
   },
   {
     id: 7,
@@ -107,10 +107,10 @@ export const articlesMock: IArticlePreview[] = [
     commentCount: 44,
     previewImage: {
       src: "https://i1.sndcdn.com/avatars-yHA8nds2mqg4uYtr-kyxTzw-t500x500.jpg",
-      alt: "Tame Impala"
+      alt: "Tame Impala",
     },
     category: "ユーモア",
-    likeCount: 4
+    likeCount: 4,
   },
   {
     id: 0,
@@ -123,7 +123,7 @@ export const articlesMock: IArticlePreview[] = [
       alt: "Tame Impala",
     },
     category: "ユーモア",
-    likeCount: 7
+    likeCount: 7,
   },
   {
     id: 1,
@@ -133,10 +133,10 @@ export const articlesMock: IArticlePreview[] = [
     commentCount: 30,
     previewImage: {
       src: "https://i1.sndcdn.com/avatars-yHA8nds2mqg4uYtr-kyxTzw-t500x500.jpg",
-      alt: "Tame Impala"
+      alt: "Tame Impala",
     },
     category: "ユーモア",
-    likeCount: 1
+    likeCount: 1,
   },
   {
     id: 2,
@@ -146,10 +146,10 @@ export const articlesMock: IArticlePreview[] = [
     commentCount: 52,
     previewImage: {
       src: "https://i1.sndcdn.com/avatars-yHA8nds2mqg4uYtr-kyxTzw-t500x500.jpg",
-      alt: "Tame Impala"
+      alt: "Tame Impala",
     },
     category: "ユーモア",
-    likeCount: 23
+    likeCount: 23,
   },
   {
     id: 3,
@@ -159,10 +159,10 @@ export const articlesMock: IArticlePreview[] = [
     commentCount: 29,
     previewImage: {
       src: "https://i1.sndcdn.com/avatars-yHA8nds2mqg4uYtr-kyxTzw-t500x500.jpg",
-      alt: "Tame Impala"
+      alt: "Tame Impala",
     },
     category: "ユーモア",
-    likeCount: 4
+    likeCount: 4,
   },
   {
     id: 4,
@@ -172,10 +172,10 @@ export const articlesMock: IArticlePreview[] = [
     commentCount: 68,
     previewImage: {
       src: "https://i1.sndcdn.com/avatars-yHA8nds2mqg4uYtr-kyxTzw-t500x500.jpg",
-      alt: "Tame Impala"
+      alt: "Tame Impala",
     },
     category: "ユーモア",
-    likeCount: 12
+    likeCount: 12,
   },
   {
     id: 5,
@@ -185,10 +185,10 @@ export const articlesMock: IArticlePreview[] = [
     commentCount: 40,
     previewImage: {
       src: "https://i1.sndcdn.com/avatars-yHA8nds2mqg4uYtr-kyxTzw-t500x500.jpg",
-      alt: "Tame Impala"
+      alt: "Tame Impala",
     },
     category: "ユーモア",
-    likeCount: 10
+    likeCount: 10,
   },
   {
     id: 6,
@@ -198,10 +198,10 @@ export const articlesMock: IArticlePreview[] = [
     commentCount: 0,
     previewImage: {
       src: "https://i1.sndcdn.com/avatars-yHA8nds2mqg4uYtr-kyxTzw-t500x500.jpg",
-      alt: "Tame Impala"
+      alt: "Tame Impala",
     },
     category: "ユーモア",
-    likeCount: 23
+    likeCount: 23,
   },
   {
     id: 7,
@@ -211,10 +211,10 @@ export const articlesMock: IArticlePreview[] = [
     commentCount: 44,
     previewImage: {
       src: "https://i1.sndcdn.com/avatars-yHA8nds2mqg4uYtr-kyxTzw-t500x500.jpg",
-      alt: "Tame Impala"
+      alt: "Tame Impala",
     },
     category: "ユーモア",
-    likeCount: 4
+    likeCount: 4,
   },
   {
     id: 8,
@@ -227,7 +227,7 @@ export const articlesMock: IArticlePreview[] = [
       alt: "Tame Impala",
     },
     category: "ユーモア",
-    likeCount: 7
+    likeCount: 7,
   },
   {
     id: 9,
@@ -237,10 +237,10 @@ export const articlesMock: IArticlePreview[] = [
     commentCount: 30,
     previewImage: {
       src: "https://i1.sndcdn.com/avatars-yHA8nds2mqg4uYtr-kyxTzw-t500x500.jpg",
-      alt: "Tame Impala"
+      alt: "Tame Impala",
     },
     category: "ユーモア",
-    likeCount: 1
+    likeCount: 1,
   },
   {
     id: 10,
@@ -250,10 +250,10 @@ export const articlesMock: IArticlePreview[] = [
     commentCount: 52,
     previewImage: {
       src: "https://i1.sndcdn.com/avatars-yHA8nds2mqg4uYtr-kyxTzw-t500x500.jpg",
-      alt: "Tame Impala"
+      alt: "Tame Impala",
     },
     category: "ユーモア",
-    likeCount: 23
+    likeCount: 23,
   },
   {
     id: 11,
@@ -263,10 +263,10 @@ export const articlesMock: IArticlePreview[] = [
     commentCount: 29,
     previewImage: {
       src: "https://i1.sndcdn.com/avatars-yHA8nds2mqg4uYtr-kyxTzw-t500x500.jpg",
-      alt: "Tame Impala"
+      alt: "Tame Impala",
     },
     category: "ユーモア",
-    likeCount: 4
+    likeCount: 4,
   },
   {
     id: 12,
@@ -276,10 +276,10 @@ export const articlesMock: IArticlePreview[] = [
     commentCount: 68,
     previewImage: {
       src: "https://i1.sndcdn.com/avatars-yHA8nds2mqg4uYtr-kyxTzw-t500x500.jpg",
-      alt: "Tame Impala"
+      alt: "Tame Impala",
     },
     category: "ユーモア",
-    likeCount: 12
+    likeCount: 12,
   },
   {
     id: 13,
@@ -289,10 +289,10 @@ export const articlesMock: IArticlePreview[] = [
     commentCount: 40,
     previewImage: {
       src: "https://i1.sndcdn.com/avatars-yHA8nds2mqg4uYtr-kyxTzw-t500x500.jpg",
-      alt: "Tame Impala"
+      alt: "Tame Impala",
     },
     category: "ユーモア",
-    likeCount: 10
+    likeCount: 10,
   },
   {
     id: 14,
@@ -302,10 +302,10 @@ export const articlesMock: IArticlePreview[] = [
     commentCount: 0,
     previewImage: {
       src: "https://i1.sndcdn.com/avatars-yHA8nds2mqg4uYtr-kyxTzw-t500x500.jpg",
-      alt: "Tame Impala"
+      alt: "Tame Impala",
     },
     category: "ユーモア",
-    likeCount: 23
+    likeCount: 23,
   },
   {
     id: 15,
@@ -315,10 +315,10 @@ export const articlesMock: IArticlePreview[] = [
     commentCount: 44,
     previewImage: {
       src: "https://i1.sndcdn.com/avatars-yHA8nds2mqg4uYtr-kyxTzw-t500x500.jpg",
-      alt: "Tame Impala"
+      alt: "Tame Impala",
     },
     category: "ユーモア",
-    likeCount: 4
+    likeCount: 4,
   },
   {
     id: 16,
@@ -331,7 +331,7 @@ export const articlesMock: IArticlePreview[] = [
       alt: "Tame Impala",
     },
     category: "ユーモア",
-    likeCount: 7
+    likeCount: 7,
   },
   {
     id: 17,
@@ -341,10 +341,10 @@ export const articlesMock: IArticlePreview[] = [
     commentCount: 30,
     previewImage: {
       src: "https://i1.sndcdn.com/avatars-yHA8nds2mqg4uYtr-kyxTzw-t500x500.jpg",
-      alt: "Tame Impala"
+      alt: "Tame Impala",
     },
     category: "ユーモア",
-    likeCount: 1
+    likeCount: 1,
   },
   {
     id: 18,
@@ -354,10 +354,10 @@ export const articlesMock: IArticlePreview[] = [
     commentCount: 52,
     previewImage: {
       src: "https://i1.sndcdn.com/avatars-yHA8nds2mqg4uYtr-kyxTzw-t500x500.jpg",
-      alt: "Tame Impala"
+      alt: "Tame Impala",
     },
     category: "ユーモア",
-    likeCount: 23
+    likeCount: 23,
   },
   {
     id: 19,
@@ -367,10 +367,10 @@ export const articlesMock: IArticlePreview[] = [
     commentCount: 29,
     previewImage: {
       src: "https://i1.sndcdn.com/avatars-yHA8nds2mqg4uYtr-kyxTzw-t500x500.jpg",
-      alt: "Tame Impala"
+      alt: "Tame Impala",
     },
     category: "ユーモア",
-    likeCount: 4
+    likeCount: 4,
   },
   {
     id: 20,
@@ -380,10 +380,10 @@ export const articlesMock: IArticlePreview[] = [
     commentCount: 68,
     previewImage: {
       src: "https://i1.sndcdn.com/avatars-yHA8nds2mqg4uYtr-kyxTzw-t500x500.jpg",
-      alt: "Tame Impala"
+      alt: "Tame Impala",
     },
     category: "ユーモア",
-    likeCount: 12
+    likeCount: 12,
   },
   {
     id: 21,
@@ -393,10 +393,10 @@ export const articlesMock: IArticlePreview[] = [
     commentCount: 40,
     previewImage: {
       src: "https://i1.sndcdn.com/avatars-yHA8nds2mqg4uYtr-kyxTzw-t500x500.jpg",
-      alt: "Tame Impala"
+      alt: "Tame Impala",
     },
     category: "ユーモア",
-    likeCount: 10
+    likeCount: 10,
   },
   {
     id: 22,
@@ -406,10 +406,10 @@ export const articlesMock: IArticlePreview[] = [
     commentCount: 0,
     previewImage: {
       src: "https://i1.sndcdn.com/avatars-yHA8nds2mqg4uYtr-kyxTzw-t500x500.jpg",
-      alt: "Tame Impala"
+      alt: "Tame Impala",
     },
     category: "ユーモア",
-    likeCount: 23
+    likeCount: 23,
   },
   {
     id: 23,
@@ -419,10 +419,10 @@ export const articlesMock: IArticlePreview[] = [
     commentCount: 44,
     previewImage: {
       src: "https://i1.sndcdn.com/avatars-yHA8nds2mqg4uYtr-kyxTzw-t500x500.jpg",
-      alt: "Tame Impala"
+      alt: "Tame Impala",
     },
     category: "ユーモア",
-    likeCount: 4
+    likeCount: 4,
   },
   {
     id: 24,
@@ -432,10 +432,10 @@ export const articlesMock: IArticlePreview[] = [
     commentCount: 44,
     previewImage: {
       src: "https://i1.sndcdn.com/avatars-yHA8nds2mqg4uYtr-kyxTzw-t500x500.jpg",
-      alt: "Tame Impala"
+      alt: "Tame Impala",
     },
     category: "ユーモア",
-    likeCount: 4
+    likeCount: 4,
   },
   {
     id: 25,
@@ -445,76 +445,76 @@ export const articlesMock: IArticlePreview[] = [
     commentCount: 44,
     previewImage: {
       src: "https://i1.sndcdn.com/avatars-yHA8nds2mqg4uYtr-kyxTzw-t500x500.jpg",
-      alt: "Tame Impala"
+      alt: "Tame Impala",
     },
     category: "ユーモア",
-    likeCount: 4
+    likeCount: 4,
   },
 ];
 
 export const mainCategory: ICategory[] = [
   {
     name: "유머",
-    key: "humor"
+    _id: "humor",
   },
   {
     name: "뉴스",
-    key: "news"
+    _id: "news",
   },
   {
     name: "아이돌",
-    key: "idol"
+    _id: "idol",
   },
   {
     name: "버튜버",
-    key: "vtuber"
+    _id: "vtuber",
   },
   {
     name: "주식",
-    key: "stock"
+    _id: "stock",
   },
   {
     name: "만화",
-    key: "manga"
+    _id: "manga",
   },
   {
     name: "국내야구",
-    key: "baseball_d"
+    _id: "baseball_d",
   },
   {
     name: "국내축구",
-    key: "football_d"
+    _id: "football_d",
   },
   {
     name: "해외야구",
-    key: "baseball_o"
+    _id: "baseball_o",
   },
   {
     name: "해외축구",
-    key: "football_o"
+    _id: "football_o",
   },
   {
     name: "포켓몬",
-    key: "pokemon"
+    _id: "pokemon",
   },
   {
     name: "게임",
-    key: "game"
+    _id: "game",
   },
   {
     name: "취직&전직",
-    key: "jobs"
+    _id: "jobs",
   },
   {
     name: "핫딜",
-    key: "hotdeal"
+    _id: "hotdeal",
   },
   {
     name: "입시&대학",
-    key: "academic"
+    _id: "academic",
   },
   {
     name: "K-POP",
-    key: "kpop"
+    _id: "kpop",
   },
-]
+];

@@ -1,28 +1,28 @@
 import mongoose from "mongoose";
 
-export interface Categories extends mongoose.Document {
+export interface ICategories extends mongoose.Document {
+  _id: string;
   name: string;
-  key: string;
-  parent_key: string[];
+  parent_id: ICategories;
 }
 
 /* CategorySchema will correspond to a collection in your MongoDB database. */
-const CategorySchema = new mongoose.Schema<Categories>({
+const CategorySchema = new mongoose.Schema<ICategories>({
+  _id: {
+    /* The _id of this category */
+
+    type: String,
+    required: [true, "카테고리의 키가 제공되지 없습니다."],
+  },
   name: {
     /* The name of this category */
 
     type: String,
     required: [true, "카테고리의 이름이 제공되지 없습니다."],
   },
-  key: {
-    /* The key of this category */
-
-    type: String,
-    required: [true, "카테고리의 키가 제공되지 않았습니다."],
-  },
-  parent_key: [{ type: mongoose.Schema.Types.ObjectId, ref: "Category" }],
+  parent_id: { type: String, ref: "Category" },
 });
 
 export const Category =
   (mongoose.models.Category as any as false) ||
-  mongoose.model<Categories>("Category", CategorySchema);
+  mongoose.model<ICategories>("Category", CategorySchema);
