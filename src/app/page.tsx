@@ -4,6 +4,7 @@ import { ArticleViewPreview } from "@/components/article/view/Preview";
 import { TextBlockNavBar } from "@/components/common";
 import { articlesMock, mainCategory } from "@/utils";
 import { useAPIArticle } from "./api/article";
+import { Pagination } from "@/components/common/Pagination";
 
 interface ICategoryProps {
   searchParams: {
@@ -42,6 +43,7 @@ export default async function Home({ searchParams }: ICategoryProps) {
       <List data={articles.rows}>
         {({item}) => <ArticleViewPreview article={item}/>}
       </List>
+      <Pagination currentPage={Number(searchParams.page)} count={articles.count} limit={25} baseUrl="/"/>
     </div>
   );
 }
