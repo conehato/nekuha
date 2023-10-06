@@ -14,6 +14,7 @@ export function Pagination({
   limit,
   baseUrl,
 }: IPaginationProps) {
+  const lastPageIndex = Math.ceil(count / limit);
   const renderPageButton = (index: number) => (
     <Link
       href={{
@@ -22,9 +23,9 @@ export function Pagination({
       }}
     >
       <p
-        className={`text-lg w-[30px] text-center ${
+        className={`w-[30px] text-center text-lg ${
           currentPage === index
-            ? "bg-sky-600 text-white rounded-md"
+            ? "rounded-md bg-sky-600 text-white"
             : "text-slate-500"
         }`}
       >
@@ -34,7 +35,6 @@ export function Pagination({
   );
 
   const renderPagination = () => {
-    const lastPageIndex = Math.ceil(count / limit);
     const pageCount = 5;
     const indexs = Array(Math.min(pageCount, lastPageIndex))
       .fill(0)
@@ -42,33 +42,46 @@ export function Pagination({
         (_, index) =>
           index +
           1 +
-          Math.min( // 6 5
-            Math.max(lastPageIndex - currentPage, lastPageIndex - 5),
-            Math.max(currentPage - 3, 0)
-          )
+          Math.min(
+            Math.max(lastPageIndex - currentPage, lastPageIndex - pageCount),
+            Math.max(currentPage - 3, 0),
+          ),
       );
     return indexs.map(renderPageButton);
   };
 
   return (
-    <div className="flex flex-row w-full py-1 justify-between px-4 py-2">
-      <Link href="">
-        <div className="flex flex-row justify-between items-center border border-slate-500 rounded-md py-0.5 pl-1 pr-2">
-          <ChevronLeftIcon className="w-4 h-6 fill-slate-500" />
-          <p className="flex text-sm/[0.875rem] text-slate-500 mb-0.5">
-            {"이전"}
-          </p>
-        </div>
-      </Link>
+    <div className="flex w-full flex-row justify-between p-4">
+      <div className="flex w-[58px] justify-end">
+        {currentPage !== 1 && (
+          <Link href={baseUrl}>
+            <div className="flex flex-row items-center justify-between rounded-md border border-slate-500 py-0.5 pl-1 pr-2">
+              <ChevronLeftIcon className="h-6 w-4 fill-slate-500" />
+              <p className="mb-0.5 flex text-sm/[0.875rem] text-slate-500">
+                {"처음"}
+              </p>
+            </div>
+          </Link>
+        )}
+      </div>
       <div className="flex flex-row gap-x-2">{renderPagination()}</div>
-      <Link href="">
-        <div className="flex flex-row justify-between items-center border border-slate-500 rounded-md py-0.5 pl-2 pr-1">
-          <p className="flex text-sm/[0.875rem] text-slate-500 mb-0.5">
-            {"다음"}
-          </p>
-          <ChevronRightIcon className="w-4 h-6 fill-slate-500" />
-        </div>
-      </Link>
+      <div className="flex w-[58px] justify-end">
+        <Link
+          href={{
+            pathname: baseUrl,
+            query: { page: currentPage + 1 },
+          }}
+        >
+          {currentPage !== lastPageIndex && (
+            <div className="flex w-fit flex-row items-center justify-between rounded-md border border-slate-500 py-0.5 pl-2 pr-1">
+              <p className="mb-0.5 flex text-sm/[0.875rem] text-slate-500">
+                {"다음"}
+              </p>
+              <ChevronRightIcon className="h-6 w-4 fill-slate-500" />
+            </div>
+          )}
+        </Link>
+      </div>
     </div>
   );
 }
