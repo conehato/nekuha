@@ -17,19 +17,16 @@ export function ArticleViewPreview({ article }: IArticleViewPreviewProps) {
   return (
     <div className="flex flex-row w-full bg-white items-center py-1 h-14">
       <div className="w-20 h-12 pl-2 flex items-center shrink-0">
-        {article.previewImage ? (
-          <Image
-            className="w-20 h-full object-cover"
-            src={article.previewImage.src}
-            alt={article.previewImage.alt}
-            width={80}
-            height={80}
-            placeholder="blur"
-            blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=="
-          />
-        ) : (
-          <div>이미지 없음</div>
-        )}
+        {/* <Image
+          className="w-20 h-full object-cover"
+          src={article.previewImage.src}
+          alt={article.previewImage.alt}
+          width={80}
+          height={80}
+          placeholder="blur"
+          blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=="
+        /> */}
+        <div>이미지 없음</div>
       </div>
       <div className="flex flex-col pl-2 w-full h-full justify-between">
         <div className="flex flex-row w-full -mt-0.5">

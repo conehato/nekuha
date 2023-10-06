@@ -1,8 +1,13 @@
-import { Comment, Article } from "@/models";
+import { Comment, Article, IComments } from "@/models";
 import { IArticle } from "@/interfaces";
 
 import dbConnect from "../../../dbConnect";
 
+export interface IPostCommentReq {
+  parentId: string;
+  contents: string;
+}
+export interface IPostCommentRes extends IComments {}
 export async function POST(
   req: Request,
   { params: { id } }: { params: { id: string } }
@@ -10,9 +15,15 @@ export async function POST(
   await dbConnect();
 
   try {
-    const data = await req.json();
+    const data: IPostCommentReq = await req.json();
 
-    const comment = await Comment.create(data);
+    const comment = await Comment.create({ article_id: id, ...data });
+
+    if (data.parentId) {
+      await Comment.findByIdAndUpdate(data.parentId, {
+        $push: { sub_comments: comment._id },
+      });
+    }
 
     await Article.findByIdAndUpdate<IArticle>(id, {
       $push: { comments: comment._id },
