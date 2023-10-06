@@ -1,6 +1,7 @@
 export interface IArticlePreview
   extends Omit<IArticle, "contents" | "comments"> {
   commentCount: number;
+  previewImageUrl: string;
 }
 
 export interface IArticle {
