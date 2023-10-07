@@ -14,7 +14,9 @@ function apiHandler<Res, Req = unknown>(method: methodType) {
       const response = await fetch(url, requestOptions);
       const data: Res = await response.json()
       return {
-        ...response,
+        status: response.status,
+        ok: response.ok,
+        statusText: response.statusText,
         data: data
       }
     };

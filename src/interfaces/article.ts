@@ -1,10 +1,11 @@
 export interface IArticlePreview
   extends Omit<IArticle, "contents" | "comments"> {
   commentCount: number;
+  previewImageUrl: string;
 }
 
 export interface IArticle {
-  id: number;
+  _id: string;
   title: string;
   // author: IUser;
   contents: string;

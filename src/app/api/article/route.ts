@@ -2,21 +2,22 @@ import { Article, IArticles, Comment } from "@/models";
 
 import dbConnect from "../dbConnect";
 import { IArticlePreview } from "@/interfaces";
+import { NextRequest } from "next/server";
 
 export interface IGetArticlesRes {
   count: number;
   rows: IArticlePreview[];
 }
 
-export async function GET(req: Request) {
+export async function GET(req: NextRequest) {
   await dbConnect();
 
   try {
     const count = await Article.countDocuments();
-
-    const url = new URL(req.url);
-    const page = Number(url.searchParams.get("page") || "1") - 1;
-    const limit = Number(url.searchParams.get("limit") || "25");
+    const searchParams = req.nextUrl.searchParams
+    console.log(req.nextUrl)
+    const page = Number(searchParams.get("page")) - 1;
+    const limit = Number(searchParams.get("limit"));
     const skip = page * limit;
 
     const articles = await Article.aggregate([
@@ -37,6 +38,7 @@ export async function GET(req: Request) {
 
     return Response.json({ count, rows: articles }, { status: 200 });
   } catch (e) {
+    console.log(e)
     return Response.json(e, { status: 401 });
   }
 }
@@ -46,6 +48,7 @@ export interface IPostArticleReq {
   contents: string;
   category: string;
 }
+
 export interface IPostArticleRes extends IArticles {}
 export async function POST(req: Request) {
   await dbConnect();

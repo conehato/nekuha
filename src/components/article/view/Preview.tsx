@@ -1,8 +1,8 @@
 import { IArticlePreview } from "@/interfaces";
-
 import Image from "next/image";
 import { formatDistanceToNow } from "date-fns";
 import { ja } from "date-fns/locale";
+import PreviewPlaceholder from '@/../public/images/article/placeholder_view.png'
 
 interface IArticleViewPreviewProps {
   article: IArticlePreview;
@@ -14,32 +14,42 @@ export function ArticleViewPreview({ article }: IArticleViewPreviewProps) {
     locale: ja,
   });
 
+  const renderImage = (article: IArticlePreview) => {
+    return article.previewImageUrl ? (
+      <Image
+        className="h-full w-20 object-cover"
+        src={article.previewImageUrl}
+        alt={article.title}
+        fill
+        placeholder="blur"
+        blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=="
+      />
+    ) : (
+      <Image
+        className="h-full w-20 object-cover"
+        src={PreviewPlaceholder}
+        alt={"No Image"}
+      />
+    );
+  };
+
   return (
-    <div className="flex flex-row w-full bg-white items-center py-1 h-14">
-      <div className="w-20 h-12 pl-2 flex items-center shrink-0">
-        {/* <Image
-          className="w-20 h-full object-cover"
-          src={article.previewImage.src}
-          alt={article.previewImage.alt}
-          width={80}
-          height={80}
-          placeholder="blur"
-          blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=="
-        /> */}
-        <div>이미지 없음</div>
+    <div className="flex h-14 w-full flex-row items-center bg-white py-1">
+      <div className="flex h-12 w-20 shrink-0 items-center pl-2">
+        {renderImage(article)}
       </div>
-      <div className="flex flex-col pl-2 w-full h-full justify-between">
-        <div className="flex flex-row w-full -mt-0.5">
-          <p className="text-base/[1.25rem] line-clamp-1 text-sky-600 w-fit">
+      <div className="flex h-full w-full flex-col justify-between pl-2">
+        <div className="-mt-0.5 flex w-full flex-row">
+          <p className="line-clamp-1 w-fit text-base/[1.25rem] text-sky-600">
             {`${article.title}`}
           </p>
-          <p className="text-base/[1.25rem] line-clamp-1 text-sky-700 px-2">{` [${article.commentCount}]`}</p>
+          <p className="line-clamp-1 px-2 text-base/[1.25rem] text-sky-700">{` [${article.commentCount}]`}</p>
         </div>
         <div>
-          <p className="text-xs line-clamp-1 text-stone-700 mb-1">
+          <p className="mb-1 line-clamp-1 text-xs text-stone-700">
             {"article.category"}
           </p>
-          <p className="text-xs line-clamp-1 text-stone-500 mb-0.5">
+          <p className="mb-0.5 line-clamp-1 text-xs text-stone-500">
             {`${"article.author.name"} | ${timeDiff} | 추천 ${"article.likeCount"}`}
           </p>
         </div>
