@@ -12,14 +12,12 @@ interface ICategoryProps {
   };
 }
 
-const getArticles = async (page?: string) => {
+const getArticles = async (page: string | undefined = "1") => {
   const articlesInfo = await APIArticle().get(
     `http://localhost:3000/api/article?page=${page}&limit=${25}`,
   );
-  // console.log('article data:', articlesInfo.data)
-  console.log("data", articlesInfo);
+  
   if (articlesInfo.ok) {
-    console.log("ok");
     return articlesInfo.data;
   } else {
     return {
@@ -46,7 +44,6 @@ export default async function Home({ searchParams }: ICategoryProps) {
   ];
 
   const articles = await getArticles(searchParams.page);
-
   return (
     <div className="bg-background-green flex flex-col first-letter:h-full">
       <TextBlockNavBar items={data.rows} />
@@ -54,7 +51,7 @@ export default async function Home({ searchParams }: ICategoryProps) {
         items={filters}
         selectedItem={searchParams.filter || filters[0].key}
       />
-      <List data={articles.rows}>
+      <List data={articles.rows} itemKey={(item) => item._id}>
         {({ item }) => <ArticleViewPreview article={item} />}
       </List>
       <Pagination

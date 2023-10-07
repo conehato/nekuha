@@ -5,7 +5,7 @@ export interface IArticlePreview
 }
 
 export interface IArticle {
-  id: number;
+  _id: string;
   title: string;
   // author: IUser;
   contents: string;

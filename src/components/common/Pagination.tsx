@@ -17,6 +17,7 @@ export function Pagination({
   const lastPageIndex = Math.ceil(count / limit);
   const renderPageButton = (index: number) => (
     <Link
+      key={`pageButton-${index}`}
       href={{
         pathname: baseUrl,
         query: { page: index },

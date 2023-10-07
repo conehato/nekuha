@@ -4,6 +4,6 @@ import { IGetArticlesRes, IPostArticleRes, IPostArticleReq } from "./route";
 export function APIArticle() {
   return {
     get: apiHandler<IGetArticlesRes>("GET"),
-    post: apiHandler<IPostArticleRes, IPostArticleReq>("GET"),
+    post: apiHandler<IPostArticleRes, IPostArticleReq>("POST"),
   };
 }
